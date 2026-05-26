@@ -1,0 +1,48 @@
+[project]
+name = "cloudhopper"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.12"
+dependencies = [
+    "aiohttp>=3.13.5",
+    "anthropic==0.51.0",
+    "asyncpg==0.31.0",
+    "azure-identity==1.21.0",
+    "azure-mgmt-resource==24.0.0",
+    "boto3==1.38.3",
+    "botocore>=1.38.3,<1.39.0",
+    "celery==5.5.2",
+    "email-validator>=2.1.0",
+    "fastapi==0.115.12",
+    "groq>=1.2.0",
+    "grpcio==1.71.0",
+    "grpcio-tools==1.71.0",
+    "httpx==0.28.1",
+    "kubernetes==33.1.0",
+    "langchain==0.3.25",
+    "langchain-openai==0.3.17",
+    "langgraph==0.4.1",
+    "llm-guard>=0.3.16",
+    "neo4j==5.28.1",
+    "networkx==3.4.2",
+    "numpy==2.2.5",
+    "openai==1.79.0",
+    "opentelemetry-api==1.33.1",
+    "opentelemetry-exporter-otlp==1.33.1",
+    "opentelemetry-sdk==1.33.1",
+    "orjson==3.10.18",
+    "pandas==2.2.3",
+    "protobuf>=5.29.0,<6.0.dev0",
+    "psycopg2-binary==2.9.10",
+    "pydantic==2.11.4",
+    "pydantic-settings>=2.0",
+    "python-dotenv==1.1.0",
+    "python-terraform==0.10.1",
+    "qdrant-client==1.14.2",
+    "redis==6.0.0",
+    "sqlalchemy>=2.0",
+    "structlog==25.3.0",
+    "tiktoken==0.9.0",
+    "uvicorn[standard]==0.34.2",
+]
