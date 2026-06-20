@@ -35,6 +35,22 @@ The subsystem is designed to support future migrations across AWS, Azure, GCP, O
 4. Schema evolution and replay services
 5. Event processor, ordering, and idempotency
 
+### Phase 3
+
+1. Validation service for row count, checksum, sample, and drift validation
+2. Reconciliation service for mismatch remediation and report persistence
+3. PostgreSQL validation result store and reconciliation history
+4. Validation workflow integration for cutover readiness
+5. Observability of validation and reconciliation metrics
+
+### Phase 4
+
+1. Agentic decision layer with planning, validation, conflict resolution, and recovery agents
+2. Agent decision persistence and confidence scoring
+3. Workflow-driven autonomous decisioning via Temporal signals and event feedback
+4. API endpoints for agent plan introspection and recovery orchestration
+5. Adaptive recovery and cutover readiness planning based on system state
+
 ---
 
 ## Architecture Diagram (ASCII)

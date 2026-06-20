@@ -57,6 +57,17 @@ CREATE TABLE IF NOT EXISTS sync_subsystem.sync_reconciliation_reports (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+CREATE TABLE IF NOT EXISTS sync_subsystem.sync_validation_results (
+    result_id SERIAL PRIMARY KEY,
+    job_id TEXT NOT NULL REFERENCES sync_subsystem.sync_jobs(job_id) ON DELETE CASCADE,
+    row_count_match BOOLEAN,
+    checksum_match BOOLEAN,
+    drift_score NUMERIC(7,4) DEFAULT 0,
+    sample_mismatch_count INT DEFAULT 0,
+    details JSONB NOT NULL DEFAULT '{}'::JSONB,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
 CREATE TABLE IF NOT EXISTS sync_subsystem.sync_agent_decisions (
     decision_id SERIAL PRIMARY KEY,
     job_id TEXT NOT NULL REFERENCES sync_subsystem.sync_jobs(job_id) ON DELETE CASCADE,
