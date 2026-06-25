@@ -1,12 +1,13 @@
 [project]
 name = "cloudhopper"
 version = "0.1.0"
-description = "Add your description here"
+description = "A cloud resource discovery and management tool leveraging LLMs and graph databases."
 readme = "README.md"
 requires-python = ">=3.12.12"
+
 dependencies = [
     "aiohttp>=3.13.5",
-    "anthropic==0.51.0",
+    "anthropic>=0.57.0",
     "asyncpg==0.31.0",
     "confluent-kafka>=2.1.0",
     "temporalio>=1.0.0",
@@ -26,6 +27,8 @@ dependencies = [
     "kubernetes==33.1.0",
     "langchain==0.3.25",
     "langchain-openai==0.3.17",
+    "langchain-anthropic==0.3.17",
+    "langchain-ollama",
     "langgraph==0.4.1",
     "llm-guard>=0.3.16",
     "neo4j==5.28.1",
@@ -50,3 +53,12 @@ dependencies = [
     "tiktoken==0.9.0",
     "uvicorn[standard]==0.34.2",
 ]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.scripts]
+cloudhopper = "cli.app:app"

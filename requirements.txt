@@ -30,9 +30,11 @@ python-terraform==0.10.1
 langchain==0.3.25
 langgraph==0.4.1
 langchain-openai==0.3.17
+langchain-anthropic==0.3.17
+langchain-ollama
 
 openai==1.79.0
-anthropic==0.51.0
+anthropic>=0.57.0
 
 qdrant-client==1.14.2
 neo4j==5.28.1
@@ -55,3 +57,11 @@ networkx==3.4.2
 tiktoken==0.9.0
 numpy==2.2.5
 pandas==2.2.3
+
+typer
+rich
+
+temporalio
+
+pytest 
+pytest-asyncio
