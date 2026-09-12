@@ -8,8 +8,8 @@ from agent_runtime.dispatcher.dispatcher import (
     dispatch
 )
 
-from shared.events.models import AgentEvent
-from shared.events.event_bus import publish
+from server.shared.events.models import AgentEvent
+from server.shared.events.event_bus import publish
 
 
 @activity.defn

@@ -1,5 +1,5 @@
 import os
-from shared.config.settings import *
+from server.shared.config.settings import *
 from langchain_openai import ChatOpenAI
 
 

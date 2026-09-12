@@ -6,19 +6,6 @@ router = APIRouter()
 
 workflows = {}
 
-
-# @router.get(
-#     "/workflows/{workflow_id}"
-# )
-# async def get_workflow(
-#     workflow_id: str
-# ):
-
-#     return workflows.get(
-#         workflow_id,
-#         {"error": "not found"}
-#     )
-
 @router.get("/workflows/{workflow_id}")
 async def get_workflow_status(
     workflow_id: str

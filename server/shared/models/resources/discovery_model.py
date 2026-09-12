@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from shared.models.resources.base import Resource
+from server.shared.models.resources.base import Resource
 
 class DiscoveryResult(BaseModel):
 

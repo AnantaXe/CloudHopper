@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from shared.models.resources.server import (
+from server.shared.models.resources.server import (
     ServerResource
 )
 

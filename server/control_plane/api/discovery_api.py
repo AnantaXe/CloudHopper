@@ -10,27 +10,7 @@ from control_plane.services.workflow_service import (
 
 router = APIRouter()
 
-app = FastAPI()
 workflow_service = WorkflowService()
-
-
-# @app.post("/discover")
-# async def discover(
-#     request: DiscoveryRequest
-# ):
-
-#     from control_plane.workflows.discovery_workflow import (
-#         start_discovery_workflow
-#     )
-
-#     workflow_id = await start_discovery_workflow(
-#         request.provider
-#     )
-
-#     return {
-#         "workflow_id": workflow_id,
-#         "status": "STARTED"
-#     }
 
 @router.post("/discover")
 async def discover(

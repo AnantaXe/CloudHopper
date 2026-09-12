@@ -8,7 +8,7 @@ from sqlalchemy import DateTime
 from sqlalchemy import ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 
-from database import Base
+from database.database import Base
 
 
 class User(Base):

@@ -1,6 +1,6 @@
 import pytest
 
-from shared.models.discovery import DiscoveryRequest
+from server.shared.models.discovery import DiscoveryRequest
 
 
 @pytest.mark.asyncio

@@ -1,5 +1,5 @@
 import os
-from shared.config.settings import *
+from server.shared.config.settings import *
 from langchain_anthropic import ChatAnthropic
 
 def get_anthropic_llm():

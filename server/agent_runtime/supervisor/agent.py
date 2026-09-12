@@ -13,7 +13,7 @@ from agent_runtime.supervisor.prompts import (
     DISCOVERY_PLANNER_PROMPT
 )
 
-from shared.llm.factory import (
+from server.shared.llm.factory import (
     get_llm
 )
 

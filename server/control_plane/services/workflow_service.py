@@ -8,7 +8,6 @@ from control_plane.workflows.discovery_workflow import (
     DiscoveryWorkflow
 )
 
-
 class WorkflowService:
 
     async def create_discovery_workflow(

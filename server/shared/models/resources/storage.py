@@ -1,4 +1,4 @@
-from shared.models.resources.base import Resource
+from server.shared.models.resources.base import Resource
 
 class StorageResource(Resource):
     
