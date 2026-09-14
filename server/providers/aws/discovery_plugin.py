@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from server.shared.models.resources.server import ServerResource
-from server.shared.models.resources.database import DatabaseResource
+from shared.models.resources.server import ServerResource
+from shared.models.resources.database import DatabaseResource
 
 class AWSDiscoveryPlugin:
 

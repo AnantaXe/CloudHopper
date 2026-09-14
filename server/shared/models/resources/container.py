@@ -1,4 +1,4 @@
-from server.shared.models.resources.base import Resource
+from shared.models.resources.base import Resource
 
 class ContainerResource(Resource):
     

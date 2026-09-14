@@ -1,4 +1,4 @@
-from enums import StrEnum
+from enum import StrEnum
 
 class MigrationType(StrEnum):
     """Migration type enum."""

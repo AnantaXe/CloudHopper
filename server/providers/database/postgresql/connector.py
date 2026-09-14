@@ -1,3 +1,5 @@
+"""Developer Notes: The PostgreSQLProvider class implements the DatabaseProvider interface for PostgreSQL databases. It provides methods to assess the database, test connections, discover databases, retrieve schema information, manage replication positions, freeze/unfreeze writes, and perform health checks. For Production, remove password from the class and use a secure method to handle credentials, such as environment variables or a secrets manager."""
+
 import asyncpg
 
 from agent_runtime.database.domain.model import (
@@ -9,8 +11,6 @@ from providers.database.base import DatabaseProvider
 
 class PostgreSQLProvider(DatabaseProvider):
     """PostgreSQL database provider implementation."""
-
-    """For Production, remove password from the class and use a secure method to handle credentials, such as environment variables or a secrets manager."""
 
     async def assess_database(self, endpoint: DatabaseEndpoint) -> DatabaseAssessment:
         """Assess the PostgreSQL database and return a DatabaseAssessment object."""
@@ -169,7 +169,4 @@ class PostgreSQLProvider(DatabaseProvider):
         except Exception as e:
             print(f"Health check failed: {e}")
             return False
-
-        
-
         

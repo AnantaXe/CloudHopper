@@ -1,5 +1,5 @@
-from server.shared.events.event_bus import publish
-from server.shared.events.models import AgentEvent
+from shared.events.event_bus import publish
+from shared.events.models import AgentEvent
 
 from providers.aws.discovery_plugin import (
     AWSDiscoveryPlugin

@@ -1,11 +1,11 @@
 from providers.database.registry import registry
-
+from temporalio import activity
 from agent_runtime.database.domain.model import (
     DatabaseAssessment,
     DatabaseEndpoint,
 )
 
-
+@activity.defn
 async def assess_database(endpoint: DatabaseEndpoint) -> DatabaseAssessment:
     """Assess the database using the appropriate provider based on the engine."""
 

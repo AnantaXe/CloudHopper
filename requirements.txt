@@ -65,3 +65,5 @@ temporalio
 
 pytest 
 pytest-asyncio
+
+enum34==1.1.10
