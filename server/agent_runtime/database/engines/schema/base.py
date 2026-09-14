@@ -15,8 +15,8 @@ class CanonicalTable(BaseModel):
     schema_name: str
     columns: list[CanonicalColumn] = Field(default_factory=list)
 
-class CanonicalSchema(BaseModel):
-    """Canonical schema model."""
+class CanonicalDatabaseModel(BaseModel):
+    """Canonical database model."""
 
     engine: str
     version: str
