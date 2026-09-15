@@ -74,6 +74,8 @@ class PostgreSQLProvider(DatabaseProvider):
                 database=endpoint.database_name,
                 host=endpoint.host,
                 port=endpoint.port,
+                ssl=False,
+                timeout=10
             )
             await conn.close()
             return True

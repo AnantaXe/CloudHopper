@@ -2,7 +2,6 @@ import asyncio
 from temporalio.client import Client
 from temporalio.worker import Worker
 from temporalio.contrib.pydantic import pydantic_data_converter
-
 from agent_runtime.database.workflow.database_migration_workflow import (
     DatabaseMigrationWorkflow,
 )
@@ -11,7 +10,7 @@ from agent_runtime.database.activities.cutover import (
 )
 from agent_runtime.database.activities.cdc import (
     start_cdc,
-)  
+)
 
 from agent_runtime.database.activities.assessment import (
     assess_database
