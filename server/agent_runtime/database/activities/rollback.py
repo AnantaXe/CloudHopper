@@ -4,7 +4,7 @@ You should therefore have a RollbackPlan generated during planning rather than t
 from temporalio import activity
 
 @activity.defn
-async def rollback(request, plan):
+async def rollback(request):
 
     activity.logger.info("Starting rollback activity.")
     source = get_source_provider(request)

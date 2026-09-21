@@ -1,7 +1,7 @@
 from temporalio import activity
 
 @activity.defn
-async def cutover(request, plan):
+async def cutover(request):
 
     activity.logger.info("Starting cutover activity.")
     source = get_source_provider(request)

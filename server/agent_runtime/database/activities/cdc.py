@@ -1,7 +1,7 @@
 from temporalio import activity
 
 @activity.defn
-async def start_cdc(request, plan) -> None:
+async def start_cdc(request) -> None:
 
     try:
         activity.logger.info("Starting CDC activity.")

@@ -1,7 +1,7 @@
 from temporalio import activity
 
 @activity.defn
-async def initial_bulk_load(request, plan) -> None:
+async def initial_bulk_load(request) -> None:
 
 
     try:

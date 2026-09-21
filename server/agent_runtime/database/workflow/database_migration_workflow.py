@@ -7,6 +7,13 @@ from agent_runtime.database.activities.bulk_load import initial_bulk_load
 from agent_runtime.database.activities.cdc import start_cdc
 from agent_runtime.database.activities.cutover import cutover
 from agent_runtime.database.activities.rollback import rollback
+from agent_runtime.database.activities.compatibility import compatibility
+from agent_runtime.database.activities.architecture_recommender import recommend_architect
+from agent_runtime.database.activities.strategy import determine_strategy
+from agent_runtime.database.activities.migration_plan import generate_mig_plan
+from agent_runtime.database.activities.validate_migration import validate_mig_plan
+from agent_runtime.database.activities.provision_target import provision_target_database
+from agent_runtime.database.activities.request_approval import request_migration_approval
 from agent_runtime.database.domain.model import DatabaseMigrationContext
 
 @workflow.defn
@@ -27,55 +34,45 @@ class DatabaseMigrationWorkflow:
             start_to_close_timeout=timedelta(minutes=10),
         )
 
-        compatibility = await workflow.execute_activity(
-            assessment,
-            request.target_engine,
-            request.target_version,
+        compatibility_ = await workflow.execute_activity(
+            compatibility,
+            request.target,
             start_to_close_timeout=timedelta(minutes=5),
         )
 
         architecture = await workflow.execute_activity(
-           "recommend_target_architecture",
-           args=[
-               assessment,
-               compatibility,
-               request
-           ],
+           recommend_architect,
+           request,
            start_to_close_timeout=timedelta(minutes=5),
         )
 
         strategy = await workflow.execute_activity(
-            "determine_migration_strategy",
-            compatibility,
+            determine_strategy,
+            request,
             start_to_close_timeout=timedelta(minutes=2),
         )
 
         plan = await workflow.execute_activity(
-            "generate_migration_plan",
-            args=[
-                assessment,
-                compatibility,
-                architecture,
-                strategy,
-            ],
+            generate_mig_plan,
+            request,
             start_to_close_timeout=timedelta(minutes=10),
         )
 
         await workflow.execute_activity(
-            "validate_migration_plan",
-            plan,
+            validate_mig_plan,
+            request,
             start_to_close_timeout=timedelta(minutes=2),
         )
 
         await workflow.execute_activity(
-            "request_migration_approval",
-            plan,
+            request_migration_approval,
+            request,
             start_to_close_timeout=timedelta(minutes=2),
         )
 
         await workflow.execute_activity(
-            "provision_target_database",
-            architecture,
+            provision_target_database,
+            request,
             start_to_close_timeout=timedelta(minutes=30),
         )
 
