@@ -9,6 +9,6 @@ async def generate_mig_plan(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during migration plan generation: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }

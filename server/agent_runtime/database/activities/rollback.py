@@ -23,9 +23,9 @@ async def rollback(request):
     if not source_healthy:
         raise Exception("Source database health check failed after rollback.")
 
-    return {
-        "status": "rolled_back",
-    }
+    # return {
+    #     "status": "rolled_back",
+    # }
 
 
 async def get_source_provider(request):

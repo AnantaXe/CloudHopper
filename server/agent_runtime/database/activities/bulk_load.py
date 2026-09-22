@@ -2,8 +2,7 @@ from temporalio import activity
 
 @activity.defn
 async def initial_bulk_load(request) -> None:
-
-
+    
     try:
         activity.logger.info("Starting initial bulk load activity.")
         provider = get_bulk_load_provider(request.source.engine, request.target_service)
@@ -18,9 +17,9 @@ async def initial_bulk_load(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during initial bulk load: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }
 
 def get_bulk_load_provider(source_engine, target_service):
 

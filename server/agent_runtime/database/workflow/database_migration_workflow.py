@@ -76,15 +76,15 @@ class DatabaseMigrationWorkflow:
             start_to_close_timeout=timedelta(minutes=30),
         )
 
-        if compatibility.migration_type == "HOMOGENEOUS":
-            await self._run_homogeneous(request, plan)
-        else:
-            await self._run_heterogeneous(request, plan)
+        # if compatibility_.migration_type == "HOMOGENEOUS":
+        #     await self._run_homogeneous(request, plan)
+        # else:
+        #     await self._run_heterogeneous(request, plan)
 
 
         return {
             "status": "Migration workflow completed successfully",
-            "migration_plan": request.migration_id
+            "migration_plan": context.migration_id
         }
 
 

@@ -9,6 +9,6 @@ async def determine_strategy(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during strategy determination: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }

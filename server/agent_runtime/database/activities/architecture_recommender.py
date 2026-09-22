@@ -9,6 +9,4 @@ async def recommend_architect(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during architecture recommendation: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+

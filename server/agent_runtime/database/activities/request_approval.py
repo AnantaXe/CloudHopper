@@ -9,6 +9,6 @@ async def request_migration_approval(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during migration approval request: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }

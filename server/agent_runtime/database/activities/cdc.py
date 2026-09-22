@@ -15,10 +15,10 @@ async def start_cdc(request) -> None:
         activity.logger.error(f"Error during CDC: {e}")
         raise e
 
-    return {
-        "status": "running",
-        "checkpoint": await provider.get_checkpoint(),
-    }
+    # return {
+    #     "status": "running",
+    #     "checkpoint": await provider.get_checkpoint(),
+    # }
 
 async def get_cdc_provider(source_engine, target_service):
 

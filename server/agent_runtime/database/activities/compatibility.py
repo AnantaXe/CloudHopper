@@ -9,6 +9,6 @@ async def compatibility(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during compatibility check: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }

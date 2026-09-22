@@ -38,9 +38,9 @@ async def cutover(request):
     if not target_healthy:
         raise Exception("Target database health check failed after cutover.")
 
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }
 
 async def get_source_provider(request):
     # Logic to determine and return the source provider based on the request

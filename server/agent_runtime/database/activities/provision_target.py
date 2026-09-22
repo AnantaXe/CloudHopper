@@ -9,6 +9,6 @@ async def provision_target_database(request) -> None:
     except Exception as e:
         activity.logger.error(f"Error during target database provisioning: {e}")
         raise e
-    return {
-        "status": "completed",
-    }
+    # return {
+    #     "status": "completed",
+    # }
