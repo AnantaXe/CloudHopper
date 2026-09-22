@@ -36,7 +36,11 @@ class DatabaseMigrationWorkflow:
 
         compatibility_ = await workflow.execute_activity(
             compatibility,
-            request.target,
+            args=[
+                assessment,
+                request.source,
+                request.target,
+            ],
             start_to_close_timeout=timedelta(minutes=5),
         )
 
@@ -84,7 +88,7 @@ class DatabaseMigrationWorkflow:
 
         return {
             "status": "Migration workflow completed successfully",
-            "migration_plan": context.migration_id
+            "migration_plan": migration_id
         }
 
 
